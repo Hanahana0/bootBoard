@@ -10,7 +10,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class BoardRequestDto {
-
 	private Long id;
 	private String title;
 	private String content;
@@ -18,11 +17,15 @@ public class BoardRequestDto {
 	
 	public Board toEntity() {
 		return Board.builder()
-				.title(title)
-				.content(content)
-				.registerId(registerId)
-				.build();
+			.title(title)
+			.content(content)
+			.registerId(registerId)
+			.build();
 	}
-	
 
+	@Override
+	public String toString() {
+		return "BoardRequestDto [id=" + id + ", title=" + title + ", content=" + content + ", registerId=" + registerId
+				+ "]";
+	}
 }
